@@ -1,0 +1,9 @@
+#define variable
+src = $(wildcard ./*.o)
+
+target = app
+$(target):$(src)
+	$(CC) $(src) -o $(target)
+
+%.o:%.c
+	$(CC) -c $< -o $@
